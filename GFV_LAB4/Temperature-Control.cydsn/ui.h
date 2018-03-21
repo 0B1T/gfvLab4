@@ -3,6 +3,6 @@
 
 #include "project.h"
 
-void handleByteReceived(uint8_t byteReceived);
+int handleByteReceived(uint8_t byteReceived);
 
 #endif /* UI_H */

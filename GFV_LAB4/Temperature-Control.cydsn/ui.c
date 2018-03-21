@@ -1,18 +1,15 @@
 #include "ui.h"
 
-void handleByteReceived(uint8_t byteReceived)
+int handleByteReceived(uint8_t byteReceived)
 {
     switch(byteReceived)
     {   
         case '1' :
         {
-            
-        }
-        break;
-        case '2' :
-        {
-            
+            return 50;
         }
         break;
     }
+    
+    return 0;
 }

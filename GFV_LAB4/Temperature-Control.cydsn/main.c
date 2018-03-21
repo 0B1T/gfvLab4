@@ -8,6 +8,8 @@
 static char outputBuffer[256];
 static float setPoint = 30; // degrees celcius
 
+CY_ISR_PROTO(ISR_UART_rx_handler);    
+
 #define SAMPLES_PER_SECOND 3
 static uint16_t sampleWaitTimeInMilliseconds = 1000 / SAMPLES_PER_SECOND;
 
@@ -15,8 +17,14 @@ int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
 
-    float Kp = 2.0f;
-    float Ki = 1.0f/30.0f;
+    // HW initialization:
+    isr_uart_rx_StartEx(ISR_UART_rx_handler);
+    UART_Start();
+    I2C_Start();
+    PWM_Start();
+    
+    float Kp = 2.0f;        // Default = 2.0
+    float Ki = 1.0f/30.0f;  // Default = 1.0/30.0
     float Kd = 0.0f;
     float integralMax = 3000;
     float integralMin = -3000;
@@ -27,11 +35,6 @@ int main(void)
     float dt = ((float)sampleWaitTimeInMilliseconds) / 1000; // dt is measured in seconds
     PIDControl_init(Kp, Ki, Kd, integralMax, integralMin, dt);
     PIDControl_changeSetPoint(setPoint);
-    
-    // HW initialization:
-    I2C_Start();
-    UART_Start();
-    PWM_Start();
 
     // Terminal welcome message:
     UART_PutString("Temperature control application started\r\n");
@@ -61,5 +64,20 @@ int main(void)
         UART_PutString(outputBuffer);
 
         CyDelay(sampleWaitTimeInMilliseconds);
+    }
+}
+
+CY_ISR(ISR_UART_rx_handler)
+{
+    uint8_t bytesToRead = UART_GetRxBufferSize();
+    while (bytesToRead > 0)
+    {
+        uint8_t byteReceived = UART_ReadRxData();
+        
+        setPoint = handleByteReceived(byteReceived);
+        
+        if(setPoint == 0) setPoint =  30;
+        
+        bytesToRead--;
     }
 }

@@ -8,7 +8,7 @@
 static char outputBuffer[256];
 static float setPoint = 30; // degrees celcius
 
-CY_ISR_PROTO(ISR_UART_rx_handler);    
+CY_ISR_PROTO(ISR_UART_rx_handler);
 
 #define SAMPLES_PER_SECOND 3
 static uint16_t sampleWaitTimeInMilliseconds = 1000 / SAMPLES_PER_SECOND;
@@ -23,9 +23,9 @@ int main(void)
     I2C_Start();
     PWM_Start();
     
-    float Kp = 2.0f;        // Default = 2.0
-    float Ki = 1.0f/30.0f;  // Default = 1.0/30.0
-    float Kd = 0.0f;
+    float Kp = 10.0f;       // Default = 2.0f
+    float Ki = 1.0/30.0f;   // Default = 1.0f/30.0f
+    float Kd = 0.0f;        // Default = 0.0f
     float integralMax = 3000;
     float integralMin = -3000;
     float temp = 0;

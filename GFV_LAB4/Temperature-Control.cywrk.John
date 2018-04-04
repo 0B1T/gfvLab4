@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Temperature-Control\Temperature-Control">
 <ExpandedNodeIds>
 <v>Temperature-Control</v>
 <v>Temperature-Control\Temperature-Control</v>
@@ -212,6 +212,8 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Temperature-Control.cydsn\main.c" />
+<name v=".\Temperature-Control.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Temperature-Control.cydsn\Temperature-Control.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -219,7 +221,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="947, 612" SelectedTabbedMdiWindow="138c19b0-f1a6-4b87-9021-32853407c583"><DocumentWindow Key="D:\git\gfvLab4\GFV_LAB4\Temperature-Control.cydsn\main.c" Guid="138c19b0-f1a6-4b87-9021-32853407c583" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="947, 612" SelectedTabbedMdiWindow="138c19b0-f1a6-4b87-9021-32853407c583"><DocumentWindow Key="D:\git\gfvLab4\GFV_LAB4\Temperature-Control.cydsn\main.c" Guid="138c19b0-f1a6-4b87-9021-32853407c583" /><DocumentWindow Key="D:\git\gfvLab4\GFV_LAB4\Temperature-Control.cydsn\TopDesign\TopDesign.cysch" Guid="023e3994-3893-45ea-ae55-15fc80757135" /><DocumentWindow Key="D:\git\gfvLab4\GFV_LAB4\Temperature-Control.cydsn\Temperature-Control.cydwr" Guid="eda37040-940c-47ce-96ca-f7f6cd8e6569" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
